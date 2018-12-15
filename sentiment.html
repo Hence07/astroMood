@@ -15,20 +15,39 @@ Experimenting and getting to know the sentiment API.
 <!-- testing ajax block -->
 <script>
 
+console.log("hey");
+
+// setRequestHeader('X-AYLIEN-TextAPI-Application-Key', 'fbfadac1');
+// Headers.set('X-AYLIEN-TextAPI-Application-ID', 'f4757c18eb212a66d48aeac6d790ec48');
+
 // interested in the sentiment analysis API endpoint
 
-    // X-AYLIEN-TextAPI-Application-Key = "f4757c18eb212a66d48aeac6d790ec48";
+// var AYLIENTextAPI = require('aylien_textapi');
+// var textapi = new AYLIENTextAPI({
+//     application_id: "YourAppId",
+//     application_key: "YourAppKey"
+// });
+// textapi.sentiment({
+//     'text': 'John is a very good football player!'
+// }, function(error, response) {
+//     if (error === null) {
+//         console.log(response);
+//     }
+// });
 
-    var sentimentKey = "f4757c18eb212a66d48aeac6d790ec48";
+$.ajax({
+    url: "https://api.aylien.com/api/v1/sentiment",
+    // "X-AYLIEN-TextAPI-Application-Key": "f4757c18eb212a66d48aeac6d790ec48",
+    // "X-AYLIEN-TextAPI-Application-ID": "fbfadac1",
+    // X-AYLIEN-TextAPI-Application-Key: f4757c18eb212a66d48aeac6d790ec48,
+    // X-AYLIEN-TextAPI-Application-ID": fbfadac1
 
-    var sentimentURL = "";
-
-    $.ajax()
+    method: "GET"
+}).then(function(response) {
+    console.log(response);
+})
 
 </script>
-
-
-
 
 
 </html>
