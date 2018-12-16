@@ -1,2 +1,0 @@
-# first-node
-Learning Node
