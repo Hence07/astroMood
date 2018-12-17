@@ -1,41 +1,49 @@
-<!DOCTYPE <!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <meta charset="utf-8">
+    <title>horoscope app</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <!----script src="hscop.js"></script-->
 </head>
+
 <body>
 
-<h1>test page</h1>
-<form>
-    <label for="sign-input"> Add a zodiac sign</label>
-    <input type="text" id="sign-input">
-<input id="add-sign" type="submit" value="submit">
-</form>
+    <form action="#" id="searchForm">
+        <input type="text" name="s" placeholder="Search...">
+        <input type="submit" value="Search">
+    </form>
+    <!-- the result of the search will be rendered inside this div -->
+    <div id="result">result goes here</div>
 
-</form>
+    <script>
+        // Attach a submit handler to the form
+        $("#searchForm").submit(function (event) {
 
 
-   
-    
+            // Stop form from submitting normally
+            event.preventDefault();
 
-    <!----script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script-->
-<!----script src="sentiment-indico.js"></script-->
+            // Get some values from elements on the page:
+            var $form = $(this),
+                term = $form.find("input[name='s']").val(),
+                url = "https://aztro.sameerkumar.website?sign=" + term + "&day=today";
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">
-// Making a simple ajax call: POST request to the sever
-$.ajax({
-type:"POST",
-url: "https://aztro.sameerkumar.website?sign=aries&day=today",
-success:function(data){
-console.log(data);
-}
-});
+
+            // Send the data using post
+            var posting = $.post(url, "");
+
+            // Put the results in a div
+            posting.done(function (data) {
+                var content = $(data);
+                $("#result").empty().append("RESPONSE: <pre>" + JSON.stringify(content) + "</pre>");
+                
+            });
+            
+        });
+    </script>
 
 </body>
+
 </html>
