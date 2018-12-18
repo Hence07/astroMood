@@ -17,7 +17,7 @@ $("#searchForm").submit(function (event) {
 
     // Put the results in a div
     posting.done(function (data) {
-        var content = $(data);
+        var content = (data).description;
         $("#result").empty().append("RESPONSE: <pre>" + JSON.stringify(content) + "</pre>");
 
     });
