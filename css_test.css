@@ -1,0 +1,79 @@
+#form{
+    float: center;
+    max-width: 800px ;
+    margin: 0px auto;
+}
+
+
+
+.floated-label-wrapper {
+    position: relative;
+  }
+  
+  .floated-label-wrapper label {
+    background: #fefefe;
+    color: #1779ba;
+    font-size: 0.75rem;
+    font-weight: 600;
+    left: 0.75rem;
+    opacity: 0;
+    padding: 0 0.25rem;
+    top: 2rem;
+    transition: all 0.15s ease-in;
+    z-index: -1;
+}
+
+.floated-label-wrapper label input[type=text],
+.floated-label-wrapper label input[type=email],
+ {
+    border-radius: 4px;
+    font-size: 1.75em;
+    padding: 0.5em;
+}
+
+.floated-label-wrapper label.show {
+    opacity: 1;
+    top: -0.85rem;
+    z-index: 1;
+    transition: all 0.15s ease-in;
+  }
+  
+
+/* ---- reset ---- */ 
+
+body{ margin:0; font:normal 75% Arial, Helvetica, sans-serif; } 
+canvas{ display: block; } 
+
+/* ---- particles.js container ---- */ 
+
+#particles-js{  width: 100%; height: 100%; 
+    background-color: #232741; 
+    background-image: url(""); 
+    background-repeat: repeat-y;
+    background-size: 100%; 
+    background-position: 50% 50%; } 
+
+    /* ---- stats.js ---- */ 
+
+.count-particles{ background: #000022;
+    
+    top: 48px; left: 0; width: 80px; 
+    color: #13E8E9; 
+    font-size: .8em; 
+    text-align: left; 
+    text-indent: 4px; 
+    line-height: 14px; 
+    padding-bottom: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold; } 
+    
+.js-count-particles{ font-size: 1.1em; } 
+
+#stats, .count-particles{ -webkit-user-select: none; 
+    margin-top: 5px; 
+    margin-left: 5px; } 
+    
+#stats{ border-radius: 3px 3px 0 0; 
+    overflow: hidden; } 
+
+.count-particles{ border-radius: 0 0 3px 3px; }
