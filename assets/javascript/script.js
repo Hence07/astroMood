@@ -1,23 +1,19 @@
 //variables
-var anger;
-var joy;
-var fear;
-var sadness;
-var surprise;
+var birthdate;
 var horoscope;
 var predictedDay;
 
 // Attach a submit handler to the form
-$("#searchForm").submit(function (event) {
+$("#zodiacForm").submit(function (event) {
 
 
     // Stop form from submitting normally
     event.preventDefault();
 
     // Get some values from elements on the page:
-    var $form = $(this),
-        term = $form.find("input[name='s']").val(),
-        url = "https://aztro.sameerkumar.website?sign=" + term + "&day=today";
+        birthdate = $("#datepicker").val();
+        console.log(birthdate);
+        url = "https://aztro.sameerkumar.website?sign=" + birthdate + "&day=today";
 
 
     // Send the data using post
@@ -67,11 +63,12 @@ $("#searchForm").submit(function (event) {
         
             //clear userInput value
             if (response.results >= 0.5) {
-                console.log("You're going to have a good day.")
+                predictedDay = "You're going to have a good day.";
+                $("#output").text(predictedDay);
             } else {
-                console.log("You might have a bad day.")
+                predictedDay = "You might have a bad day.";
+                $("#output").text(predictedDay);
             }
-        
           });
         
         });
