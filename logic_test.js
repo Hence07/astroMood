@@ -1,16 +1,47 @@
 window.onload = function() {
+  var submitBtn = $("#submit");
+  var formToggle = localStorage.getItem("formToggle");
+  // var hide = $("#zodiacForm");
+  // var btnHide = $("#reset");
+  $( function() {
+    $("#datepicker").datepicker();
+  });
+  
+  ;
+  
+  $(submitBtn).on("click", function(){
+    var name = $("#fullname").val().trim();
+    var birthday = $("#datepicker").val();
+    localStorage.setItem("name", name);
+    localStorage.setItem("birthday", birthday)
+    localStorage.setItem("formToggle", 1)
+    $("#full-name").val("");
+    $("#datepicker").val("");
+    localStorage.getItem();
+  });
+  
+  $(document).on("click", "#reset", function() {
+    localStorage.clear();
+    localStorage.setItem("formToggle", 0);
+    location.reload();
+  });
+  
+  console.log(formToggle);
 
-$( function() {
-$("#datepicker").datepicker();
-});
+  // hiding form function
 
-$("#submitBtn").on("click", function(){
-  var nameInput = $("#full-name").val().trim();
-  localStorage.setItem("name", nameInput);
-  console.log(nameInput);
-  $("#full-name").val("");
-  $("#datepicker").val("");
-});
+
+//   if (formToggle == 1) {
+//    hide.hide();
+//    btnHide.show();
+//   }
+// else if (formToggle != 1) {
+//   hide.show();
+//   btnHide.hide();
+// }
+
+
+console.log(localStorage);
 
   
 
