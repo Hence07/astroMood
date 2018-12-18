@@ -46,6 +46,9 @@ var userInput = $("#emotion-input").val();
     console.log(response.results);
     console.log(response)
 
+    //clear userInput value
+    $("#emotion-input").val("");
+
   });
 
 });
