@@ -7,6 +7,8 @@ var splitDate;
 var userMonth;
 var userDate;
 var userSign;
+var sentiment;
+var barWidth;
 
 
 
@@ -159,7 +161,16 @@ $("#zodiacForm").submit(function (event) {
                 predictedDay = "You might have a bad day.";
                 $("#output").text(predictedDay);
             }
+
+            console.log(response.results);
+            sentiment = response.results;
+
+            barWidth = (sentiment.toFixed(2) * 100);
+            console.log(barWidth);
+
           });
+
+          
         
         });
         
