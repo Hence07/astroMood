@@ -14,7 +14,7 @@ var userInput = $("#emotion-input").val();
     JSON.stringify({
       'api_key': "472f187a7c554f42d719990a387ff96c",
       'data': userInput,
-      'threshold' : 0.5
+      'threshold' : 0.3
     })
   ).then(function(response) { 
 
@@ -43,9 +43,7 @@ var userInput = $("#emotion-input").val();
     console.log("Surprise");
   } 
   
-
     console.log(response.results);
-    // $("#result").text("The user is feeling ";
     console.log(response)
 
   });
