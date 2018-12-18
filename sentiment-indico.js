@@ -9,14 +9,20 @@
 //        console.log(res) 
 //         }
 //   );
+
+var userInput = "I'm feeling great today!";
   
   // batch example
   $.post(
-    'https://apiv2.indico.io/sentiment/batch',
+    'https://apiv2.indico.io/emotion',
     JSON.stringify({
       'api_key': "472f187a7c554f42d719990a387ff96c",
-      'data': [
-        "There will be some big news today—and some wildly different first reactions to it. Don't assume that other people are feeling the same way you are—that kind of assumption will lead to problems. Wait until the dust has settled, and then do a casual inventory of other people's feelings. Once you get an idea of what everyone thinks, you will know what sort of response to suggest—and everyone will be much happier for it."
-      ]
+      'data': userInput,
+      'threshold' : 0.1
     })
-  ).then(function(res) { console.log(res) });
+  ).then(function(response) { 
+
+    console.log(response.results);
+    console.log(response)
+
+  });
