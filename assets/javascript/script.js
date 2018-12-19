@@ -9,7 +9,8 @@ var userDate;
 var userSign;
 var sentiment;
 var barWidth;
-var name;
+
+$( "#datepicker" ).datepicker();
 
 
 // Attach a submit handler to the form
@@ -20,9 +21,7 @@ $("#zodiacForm").submit(function (event) {
     //grab date from datepicker for zodiac sign function
         //get rid of last 4 digits
         birthdate = $("#datepicker").val();
-        name = $("#full-name").val();
-        localStorage.setItem("name", name);
-        localStorage.setItem("birthday", birthdate);
+
         noYear = birthdate.slice(0, -5);
         splitDate = noYear.split("/");
         userMonth = splitDate[0];
@@ -142,14 +141,19 @@ $("#zodiacForm").submit(function (event) {
         
             console.log(response);
 
+            $("#horoscope-result").text("");
+
             var zodiacIcon = $("<img>");
             $(zodiacIcon).attr("src", zodiacImg);
-            $("#horoscope").append(zodiacIcon);
+            $("#horoscope-result").append(zodiacIcon);
  
             var horoscopeDiv = $("<div>");
             horoscopeDiv.text(horoscope);
-            $("#horoscope").append(horoscopeDiv);
+            $("#horoscope-result").append(horoscopeDiv);
 
+
+
+           
 
         
             //clear userInput value
@@ -166,6 +170,8 @@ $("#zodiacForm").submit(function (event) {
 
             barWidth = (sentiment.toFixed(2) * 100);
             console.log(barWidth);
+
+            $("#pos-bar").css("width", (barWidth + "%"));
 
           });
 

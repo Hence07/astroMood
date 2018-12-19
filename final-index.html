@@ -11,6 +11,16 @@
     integrity="sha256-1mcRjtAxlSjp6XJBgrBeeCORfBp/ppyX4tsvpQVCcpA= sha384-b5S5X654rX3Wo6z5/hnQ4GBmKuIJKMPwrJXn52ypjztlnDK2w9+9hSMBz/asy9Gw sha512-M1VveR2JGzpgWHb0elGqPTltHK3xbvu3Brgjfg4cg5ZNtyyApxw/45yHYsZ/rCVbfoO5MSZxB241wWq642jLtA=="
     crossorigin="anonymous">
 
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+    <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+
     <!-- custom css link -->
     <link rel="stylesheet" type="text/css" href="css_test.css" >
     <link rel="stylesheet" text="text/css" href="./assets/css/style.css">
@@ -24,7 +34,7 @@
             </header>
 
 
-            <form autocomplete="off" id = "zodiacForm" class="callout text-center animate shake">
+            <form autocomplete="off" id = "zodiacForm" class="callout text-center">
                     <!-- <h2>Find your Mood today</h2> -->
                     <div id="zodiac-head">
                         <div id="zodiac-container" class="zodiac-bubble">
@@ -36,32 +46,33 @@
                     </div>
                     <div class="floated-label-wrapper">
                       <label for="date">Date:</label>
-                      <input type="text" id="datepicker" name="date input" placeholder="12/17/2018">
+                        <input type="text" id="datepicker">
+                           
                     </div>
                     <button id="send" class="button">Submit</button>
             </form>
-
-            <section id="results">
-
-                <div id="horoscope"></div>
-
-            </section>
             
             
         </main>
         
+        <section id="results">
+
+            <div id="horoscope-result"></div>
+
+            <div id="positivity-bar">
+                <div id="pos-container" class="bar">
+                        <div id="pos-bar" class="bar"></div>
+                </div>
+                
+            </div>
+
+        </section>
         
     </body>
 </div> 
-    <!-- jquery link -->
-<script src="https://code.jquery.com/jquery-3.3.1.js"
- integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-crossorigin="anonymous"></script>
 
- <!-- jquery UI -->
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
-crossorigin="anonymous"></script>
+
+
 
 
 <!-- foundaiton js link -->
