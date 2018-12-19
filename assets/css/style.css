@@ -16,3 +16,10 @@
     position: relative;
     top: 35px;
 }
+
+/* results */
+
+#results {
+    background: white;
+    padding: 10px;
+}

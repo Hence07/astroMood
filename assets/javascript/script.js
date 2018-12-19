@@ -39,61 +39,73 @@ $("#zodiacForm").submit(function (event) {
         //aries mar 21 - apr 19
         if ((userMonth == 03 && userDate >= 21) || (userMonth == 04 && userDate <= 19))  {
             userSign = "aries";
+            zodiacImg = "./assets/img/zodiac-svg/aries-symbol.svg";
         }
 
         //taurus apr 20 - may 20
         if ((userMonth == 04 && userDate >= 20) || (userMonth == 05 && userDate <= 20))  {
             userSign = "taurus";
+            zodiacImg = "./assets/img/zodiac-svg/taurus-zodiac-symbol-of-bull-head-front.svg";
         }
 
         //gemini may 21 - june 20
         if ((userMonth == 05 && userDate >= 21) || (userMonth == 06 && userDate <= 20))  {
             userSign = "gemini";
+            zodiacImg = "./assets/img/zodiac-svg/gemini-zodiac-symbol-of-two-twins-faces.svg";
         }
 
         //cancer jun 21 - jul 22
         if ((userMonth == 06 && userDate >= 21) || (userMonth == 07 && userDate <= 22))  {
             userSign = "cancer";
+            zodiacImg = "./assets/img/zodiac-svg/cancer-astrological-sign-of-crab-zodiac-sign.svg";
         }
 
         //leo jul 23 - aug 22
         if ((userMonth == 07 && userDate >= 23) || (userMonth == 08 && userDate <= 22))  {
             userSign = "leo";
+            zodiacImg = "./assets/img/zodiac-svg/leo-astrological-sign.svg";
         }
 
         //virgo aug 23 - sep 22
         if ((userMonth == 08 && userDate >= 23) || (userMonth == 09 && userDate <= 22))  {
             userSign = "virgo";
+            zodiacImg = "./assets/img/zodiac-svg/virgo-woman-head-shape-symbol.svg";
         }
 
         //libra sep 23 - oct 22
         if ((userMonth == 09 && userDate >= 23) || (userMonth == 10 && userDate <= 22))  {
             userSign = "libra";
+            zodiacImg = "./assets/img/zodiac-svg/libra-scale-balance-symbol.svg";
         }
 
         //scorpio oct 23 - nov 21
         if ((userMonth == 10 && userDate >= 23) || (userMonth == 11 && userDate <= 21))  {
             userSign = "scorpio";
+            zodiacImg = "./assets/img/zodiac-svg/scorpion-shape-of-zodiac-sign.svg";
         }
 
         //sagittarius nov 22 - dec 21
         if ((userMonth == 11 && userDate >= 22) || (userMonth == 12 && userDate <= 21))  {
             userSign = "sagittarius";
+            zodiacImg = "./assets/img/zodiac-svg/sagittarius-arch-and-arrow-symbol.svg";
         }
 
         //capricorn dec 22 - jan 19
         if ((userMonth == 12 && userDate >= 22) || (userMonth == 01 && userDate <= 19))  {
             userSign = "capricorn";
+            zodiacImg = "./assets/img/zodiac-svg/capricorn-goat-animal-shape-of-zodiac-sign.svg";
         }
 
         //aquarius jan 20 - feb 18
         if ((userMonth == 01 && userDate >= 20) || (userMonth == 02 && userDate <= 18))  {
             userSign = "aquarius";
+            zodiacImg = "./assets/img/zodiac-svg/aquarius-water-container-symbol.svg";
         }
 
         //pisces feb 19 - mar 20
         if ((userMonth == 02 && userDate >= 19) || (userMonth == 03 && userDate <= 20))  {
             userSign = "pisces";
+            zodiacImg = "./assets/img/zodiac-svg/pisces-astrological-sign-symbol.svg";
         }
 
 
@@ -127,30 +139,15 @@ $("#zodiacForm").submit(function (event) {
           ).then(function(response) { 
         
             console.log(response);
-        //   if (response.results.hasOwnProperty('anger')) {
-        //     anger == true;
-        //     console.log("Anger");
-        //   }
-          
-        //   if (response.results.hasOwnProperty('joy')) {
-        //     joy == true;
-        //     console.log("Joy");
-        //   }
-          
-        //   if (response.results.hasOwnProperty('fear')) {
-        //     fear == true;
-        //     console.log("Fear");
-        //   } 
-          
-        //   if (response.results.hasOwnProperty('sadness')) {
-        //     sadness == true;
-        //     console.log("Sadness");
-        //   } 
-          
-        //   if (response.results.hasOwnProperty('surprise')) {
-        //     surprise == true;
-        //     console.log("Surprise");
-        //   } 
+
+            var zodiacIcon = $("<img>");
+            $(zodiacIcon).attr("src", zodiacImg);
+            $("#horoscope").append(zodiacIcon);
+ 
+            var horoscopeDiv = $("<div>");
+            horoscopeDiv.text(horoscope);
+            $("#horoscope").append(horoscopeDiv);
+
 
         
             //clear userInput value
