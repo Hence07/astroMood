@@ -23,3 +23,24 @@
     background: white;
     padding: 10px;
 }
+
+/* positivity bar */
+
+.bar {
+    height: 25px;
+}
+
+#pos-container {
+    border: solid 2px #777;
+    background: white;
+    position: relative;
+    width: 100%;
+}
+
+#pos-bar {
+    background: #777;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 23px;
+}

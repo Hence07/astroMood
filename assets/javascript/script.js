@@ -2,38 +2,82 @@
 var birthdate;
 var horoscope;
 var predictedDay;
-var noYear;
 var splitDate;
 var userMonth;
 var userDate;
 var userSign;
 var sentiment;
 var barWidth;
-var name;
+var stringMonth;
+
+$(function() {
+    $( "#datepicker" ).datepicker({
+        changeMonth : true,
+        dateFormat: 'dd MM'
+    });
+})
+
 
 
 // Attach a submit handler to the form
-$("#zodiacForm").submit(function (event) {
+$(document).on("click", "#send", function (event) {
 
     event.preventDefault();
+
+
+    //use animate.css to shake the button if there's no input for the calendar or name
+    if (($('#full-name').val() == '') || ($("#date-picker").val() == '')) {
+        $(this).addClass("animated shake");
+    }
+
 
     //grab date from datepicker for zodiac sign function
         //get rid of last 4 digits
         birthdate = $("#datepicker").val();
-        name = $("#full-name").val();
-        localStorage.setItem("name", name);
-        localStorage.setItem("birthday", birthdate);
-        noYear = birthdate.slice(0, -5);
-        splitDate = noYear.split("/");
-        userMonth = splitDate[0];
-        userDate = splitDate[1];
-        
 
-        console.log(birthdate);
-        console.log(noYear);
-        console.log(splitDate);
-        console.log(userMonth);
-        console.log(userDate);
+        splitDate = birthdate.split(" ");
+        userDate = splitDate[0];
+        stringMonth = splitDate[1];
+
+        if (stringMonth == "January") {
+            userMonth = 1;
+        }
+        if (stringMonth == "February") {
+            userMonth = 2;
+        }
+        if (stringMonth == "March") {
+            userMonth = 3;
+        }
+        if (stringMonth == "April") {
+            userMonth = 4;
+        }
+        if (stringMonth == "May") {
+            userMonth = 5;
+        }
+        if (stringMonth == "June") {
+            userMonth = 6;
+        }
+        if (stringMonth == "July") {
+            userMonth = 7;
+        }
+        if (stringMonth == "August") {
+            userMonth = 8;
+        }
+        if (stringMonth == "September") {
+            userMonth = 9;
+        }
+        if (stringMonth == "October") {
+            userMonth = 10;
+        }
+
+        if (stringMonth == "November") {
+            userMonth = 11;
+        }
+
+        if (stringMonth == "December") {
+            userMonth = 12;
+        }
+        
 
         //create if statements to calculate the range of dates for birthdays
 
@@ -142,14 +186,19 @@ $("#zodiacForm").submit(function (event) {
         
             console.log(response);
 
+            $("#horoscope-result").text("");
+
             var zodiacIcon = $("<img>");
             $(zodiacIcon).attr("src", zodiacImg);
-            $("#horoscope").append(zodiacIcon);
+            $("#horoscope-result").append(zodiacIcon);
  
             var horoscopeDiv = $("<div>");
             horoscopeDiv.text(horoscope);
-            $("#horoscope").append(horoscopeDiv);
+            $("#horoscope-result").append(horoscopeDiv);
 
+
+
+           
 
         
             //clear userInput value
@@ -167,13 +216,21 @@ $("#zodiacForm").submit(function (event) {
             barWidth = (sentiment.toFixed(2) * 100);
             console.log(barWidth);
 
+            $("#pos-bar").css("width", (barWidth + "%"));
+
           });
 
           
         
         });
+
+       
         
     });
+
+    $("#clear-form").on("click", function () {
+        location.reload();
+    })
 
 // $("#feelingsButton").on("click", function() {
   
