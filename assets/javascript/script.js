@@ -9,7 +9,7 @@ var userDate;
 var userSign;
 var sentiment;
 var barWidth;
-
+var name;
 
 
 // Attach a submit handler to the form
@@ -20,7 +20,9 @@ $("#zodiacForm").submit(function (event) {
     //grab date from datepicker for zodiac sign function
         //get rid of last 4 digits
         birthdate = $("#datepicker").val();
-
+        name = $("#full-name").val();
+        localStorage.setItem("name", name);
+        localStorage.setItem("birthday", birthdate);
         noYear = birthdate.slice(0, -5);
         splitDate = noYear.split("/");
         userMonth = splitDate[0];
