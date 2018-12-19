@@ -1,6 +1,37 @@
-/* form container */
+/* initial-form format */
 
+/* 
+colors:
 
+red : #B0413E
+purple : #634B66
+
+*/
+
+.fullscreen-form {
+    height: 100%;
+}
+
+#initial-form {
+    background: #712A28;
+}
+
+#result-form {
+    /* background: # */
+}
+
+/* zodiacForm */
+
+#zodiacForm {
+    border-radius: 15px;
+    margin: auto 40px;
+    padding: 15px 50px;
+    position: relative;
+}
+
+#zodiac-container {
+    margin: 30px auto;
+}
 
 /* zodiac image */
 .zodiac-bubble {
@@ -44,3 +75,27 @@
     left: 0;
     height: 23px;
 }
+
+/* form styling */
+
+#form{
+    float: center;
+    max-width: 800px ;
+    margin: 0px auto;
+}
+
+
+
+.floated-label-wrapper {
+    position: relative;
+  }
+  
+  .floated-label-wrapper label {
+    background: #fefefe;
+    color: #1779ba;
+}
+
+/* ---- reset ---- */ 
+
+body{ margin:0; font:normal 75% Arial, Helvetica, sans-serif; } 
+canvas{ display: block; } 

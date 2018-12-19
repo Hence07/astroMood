@@ -17,8 +17,6 @@ $(function() {
     });
 })
 
-
-
 // Attach a submit handler to the form
 $(document).on("click", "#send", function (event) {
 
