@@ -228,9 +228,10 @@ $(document).on("click", "#send", function (event) {
             var zodiacIcon = $("<img>");
             $(zodiacIcon).attr("src", images);
             $("#horoscope-result").append(zodiacIcon);
- 
+            
             var horoscopeDiv = $("<div>");
             horoscopeDiv.text(horoscope);
+            $(horoscopeDiv).prepend("Hi, " + name + " ");
             $("#horoscope-result").append(horoscopeDiv);
 
 
@@ -241,9 +242,12 @@ $(document).on("click", "#send", function (event) {
             //clear userInput value
             if (response.results >= 0.5) {
                 predictedDay = "You're going to have a good day.";
+                
                 $("#output").text(predictedDay);
             } else {
                 predictedDay = "You might have a bad day.";
+
+                $("#pos-container").addClass("alert");
                 $("#output").text(predictedDay);
             }
             
@@ -252,8 +256,11 @@ $(document).on("click", "#send", function (event) {
 
             barWidth = (sentiment.toFixed(2) * 100);
             console.log(barWidth);
-            
+            // var barIconSad = $("<img>")
+            // barIconSad.attr("asset/img/bar_image_sad")
+            $('#pos-bar').prepend('<img src="assets/img/bar_image_sad.png" height="14px" width="14x">');
             $("#pos-bar").css("width", (barWidth + "%"));
+            $('#pos-bar').append('<img src="assets/img/bar_image_happy.png" height="14px" width="14x">');
             
         });
         

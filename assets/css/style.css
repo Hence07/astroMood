@@ -57,11 +57,11 @@ purple : #634B66
 
 /* positivity bar */
 
-.bar {
+/* .bar {
     height: 25px;
-}
+} */
 
-#pos-container {
+/* #pos-container {
     border: solid 2px #777;
     background: white;
     position: relative;
@@ -74,7 +74,7 @@ purple : #634B66
     top: 0;
     left: 0;
     height: 23px;
-}
+} */
 
 /* form styling */
 
