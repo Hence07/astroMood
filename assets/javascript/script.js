@@ -18,7 +18,6 @@ var name;
 var images;
 
 
-resultPage();
 
 
 $(function() {
@@ -31,6 +30,7 @@ $(function() {
 
 if (formToggle == "true") {
     form.hide();
+    resultPage();
     result.show();
    }
  if (formToggle != "true") {
