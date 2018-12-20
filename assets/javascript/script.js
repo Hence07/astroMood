@@ -231,7 +231,7 @@ $(document).on("click", "#send", function (event) {
             
             var horoscopeDiv = $("<div>");
             horoscopeDiv.text(horoscope);
-            $(horoscopeDiv).prepend("Hi, " + name + " ");
+            $(horoscopeDiv).prepend(name + ", ");
             $("#horoscope-result").append(horoscopeDiv);
 
 
@@ -258,9 +258,11 @@ $(document).on("click", "#send", function (event) {
             console.log(barWidth);
             // var barIconSad = $("<img>")
             // barIconSad.attr("asset/img/bar_image_sad")
-            $('#pos-bar').prepend('<img src="assets/img/bar_image_sad.png" height="14px" width="14x">');
+            // $('#pos-bar').prepend('<img src="assets/img/bar_image_sad.png" height="14px" width="14x">');
+            
             $("#pos-bar").css("width", (barWidth + "%"));
-            $('#pos-bar').append('<img src="assets/img/bar_image_happy.png" height="14px" width="14x">');
+            // $('#pos-bar').append('<img src="assets/img/bar_image_happy.png" height="14px" width="14x">');
+            
             
         });
         
