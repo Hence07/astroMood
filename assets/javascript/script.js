@@ -13,9 +13,9 @@ var userName;
 var form = $("#zodiacForm");
 var result = $("#results");
 var formToggle = localStorage.getItem("data");
-var sign
-var name
-var images
+var sign;
+var name;
+var images;
 
 
 resultPage();
@@ -180,14 +180,14 @@ $(document).on("click", "#send", function (event) {
         localStorage.setItem("userName", userName);
         localStorage.setItem("userSign", userSign);
         localStorage.setItem("zodiacImg", zodiacImg);
-        localStorage.setItem("data", "true")
+        localStorage.setItem("data", "true");
         resultPage();
         location.reload();
     });
 
 
-    console.log(sign)
-    console.log(name)
+    console.log(sign);
+    console.log(name);
     
     
     // Stop form from submitting normally
