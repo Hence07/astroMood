@@ -32,12 +32,12 @@ if (formToggle == "true") {
     form.hide();
     resultPage();
     result.show();
-   }
- if (formToggle != "true") {
-   result.hide();
-   form.show();
-   
- }
+}
+if (formToggle != "true") {
+    result.hide();
+    form.show();
+    
+}
 
 
 // Attach a submit handler to the form
@@ -181,7 +181,7 @@ $(document).on("click", "#send", function (event) {
         localStorage.setItem("userSign", userSign);
         localStorage.setItem("zodiacImg", zodiacImg);
         localStorage.setItem("data", "true");
-        resultPage();
+        // resultPage();
         location.reload();
     });
 

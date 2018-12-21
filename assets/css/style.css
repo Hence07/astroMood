@@ -31,6 +31,7 @@ purple : #634B66
     padding: 15px 50px;
     position: relative;
     margin: 18% 50px;
+    display: none;
 }
 
 #zodiac-container {
@@ -72,6 +73,7 @@ purple : #634B66
     font-size: 18px;
     border-radius: 25px;
     line-height: 25px;
+    display: none;
 }
 
 #results button {
